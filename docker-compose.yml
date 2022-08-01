@@ -1,0 +1,23 @@
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+
+  phppgadmin:
+    image: neimheadh/phppgadmin
+    environment:
+      
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: postgres
+      POSTGRES_PASS: postgres
+      
+    ports:
+
+      - "8888:80"
+      
+    #command: ["sh","-c","echo "ServerName www.example.com" >> /etc/apache2/apache2.conf"]
